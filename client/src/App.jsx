@@ -14,8 +14,8 @@ const App = () => {
       <div className="app__right col-12 col-lg-5">
         <Services />
         <Transactions />
-        <Footer />
-        <Loader />
+        {/* <Footer />
+        <Loader /> */}
       </div>
     </div>
   )

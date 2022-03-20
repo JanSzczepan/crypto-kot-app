@@ -19,6 +19,18 @@
 }
 
 .inputs-container {
+   /* Chrome, Safari, Edge, Opera */
+   input::-webkit-outer-spin-button,
+   input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+   }
+
+   /* Firefox */
+   input[type=number] {
+   -moz-appearance: textfield;
+   }
+
    @media(min-width: 700px) {
       width: 40%;
    }
@@ -110,4 +122,8 @@
          font-size: 23px;
       }
    }
+}
+
+.transaction-btn:focus {
+   box-shadow: 0 0 10px #F9FAFB !important;
 }

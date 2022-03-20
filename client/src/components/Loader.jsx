@@ -1,7 +1,11 @@
+import './Loader.scss'
+
 const Loader = () => {
    return ( 
-      <div>
-      </div>
+      // <div className="spinner-container mx-auto"><div className="spinner">
+      //    <div></div>
+      // </div></div>
+      <div class="loader mx-auto"><div></div><div></div><div></div><div></div></div>
     );
 }
  

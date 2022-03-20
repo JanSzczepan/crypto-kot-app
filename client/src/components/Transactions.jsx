@@ -4,7 +4,20 @@ import { faInfo } from '@fortawesome/free-solid-svg-icons'
 import bootstrap from 'bootstrap'
 
 import './Transactions.scss'
+
 import { useEffect } from 'react'
+import Loader from './Loader'
+
+const Input = ({ placeholder, name, type, value, handleChange }) => (
+   <input
+      placeholder={placeholder}
+      type={type}
+      step="0.0001"
+      value={value}
+      onChange={(e) => handleChange(e, name)}
+      className="transaction-input form-control mb-3 text-light"
+   />
+);
 
 const Transactions = () => {
    useEffect(() => {
@@ -12,7 +25,11 @@ const Transactions = () => {
       tooltips.forEach(t => {
          new bootstrap.Tooltip(t)
       })
-    }, [])
+   }, [])
+
+   const handleSubmit = () => {
+
+   }
 
    return ( 
       <main className="px-4 px-sm-5 py-5">
@@ -40,11 +57,15 @@ const Transactions = () => {
                </div>
             </div>
             <div className="inputs-container">
-               <input className="transaction-input form-control mb-3 text-light" type="text" placeholder="Address To" aria-label="default input example" />
-               <input className="transaction-input form-control mb-3 text-light" type="text" placeholder="Amount (ETH)" aria-label="default input example" />
-               <input className="transaction-input form-control mb-3 text-light" type="text" placeholder="Keyword (Gif)" aria-label="default input example" />
-               <input className="transaction-input form-control mb-3 text-light" type="text" placeholder="Enter Message" aria-label="default input example" />
-               <button type="submit" className="transaction-btn btn btn-light btn-lg w-100 rounded-pill">Send Now</button>
+               <Input placeholder="Address To" name="addressTo" type="text" handleChange={() => {}} />
+               <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={() => {}} />
+               <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={() => {}} />
+               <Input placeholder="Enter Message" name="message" type="text" handleChange={() => {}} />
+               {false ? (
+                  <Loader />
+               ) : (
+                  <button type="submit" className="transaction-btn btn btn-light btn-lg w-100 rounded-pill" onSubmit={handleSubmit}>Send Now</button>
+               )}
             </div>
          </form>
       </main>

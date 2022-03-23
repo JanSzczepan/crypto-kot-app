@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEthereum } from '@fortawesome/free-brands-svg-icons'
 import { faInfo } from '@fortawesome/free-solid-svg-icons'
-import bootstrap from 'bootstrap'
+import bootstrap from 'bootstrap/dist/js/bootstrap'
 
 import './Transactions.scss'
 

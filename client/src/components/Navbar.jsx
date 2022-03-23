@@ -14,9 +14,9 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-transparent px-3 px-sm-4 px-xl-5 py-5">
          <div className="container-fluid">
             <a className="navbar-brand" href="#">CryptoKot</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               {!toggleMenu && <FontAwesomeIcon className="nav-icon" icon={faBarsStaggered} onClick={() => {setToggleMenu(true)}}/>}
-               {toggleMenu && <FontAwesomeIcon className="nav-icon" icon={faXmark} onClick={() => {setToggleMenu(false)}}/>}
+            <button onClick={() => {setToggleMenu(prevState => !prevState)}} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+               {!toggleMenu && <FontAwesomeIcon className="nav-icon" icon={faBarsStaggered}/>}
+               {toggleMenu && <FontAwesomeIcon className="nav-icon" icon={faXmark}/>}
             </button>
             <div className="collapse navbar-collapse pt-4 pt-lg-0" id="navbarSupportedContent">
                <ul className="navbar-nav me-auto me-lg-0 mb-2 mb-lg-0 ms-0 ms-lg-auto ms-0 ms-lg-auto">

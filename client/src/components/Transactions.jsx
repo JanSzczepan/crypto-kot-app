@@ -43,7 +43,7 @@ const Transactions = () => {
    }, [])
 
    return ( 
-      <main className="px-4 px-sm-5 py-5">
+      <main className="main px-4 px-sm-5 py-5">
          <ul className="nav mb-3">
             <li className="nav-item">
                <a className="nav-link text-light text-decoration-underline" aria-current="page" href="#">Send Crypto</a>

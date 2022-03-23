@@ -9,10 +9,10 @@ const App = () => {
         <div className="app__left-wrapper">
           <Navbar />
           <Welcome />
+          <Services />
         </div>
       </div>
       <div className="app__right col-12 col-lg-5 col-xxl-6">
-        <Services />
         <Transactions />
         {/* <Footer />
         <Loader /> */}

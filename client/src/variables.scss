@@ -6,5 +6,6 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 2000px
 );
+$enable-negative-margins: true;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

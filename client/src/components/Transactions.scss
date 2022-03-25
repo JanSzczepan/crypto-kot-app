@@ -18,6 +18,10 @@
    }
 }
 
+.main-btn:focus {
+   box-shadow: none !important;
+}
+
 .inputs-container {
    /* Chrome, Safari, Edge, Opera */
    input::-webkit-outer-spin-button,
@@ -54,6 +58,7 @@
    margin-bottom: 2.5rem;
 
    // background-color: #c599ff;
+   background-color: #ab32c0;
    background-image:#c599ff;background-image:  
    radial-gradient(at 24% 75%, hsla(283,95%,74%,1) 0, transparent 47%),  
    radial-gradient(at 97% 34%, hsla(228,71%,61%,1) 0, transparent 50%),  
@@ -132,4 +137,44 @@
 
 .transaction-btn:focus {
    box-shadow: 0 0 10px #F9FAFB !important;
+}
+
+.history {
+
+   .history-title {
+      position: relative;
+      margin-left: 15px;
+   }
+   .history-title::before {
+      content: '';
+      width: 6px;
+      height: 100%;
+      position: absolute;
+      left: -15px;
+      background-color: #AA32C0;
+      border-radius: 5px;
+   }
+
+   .cards-container-container {
+      position: relative;
+      overflow-x: hidden;
+      cursor: grab;
+   }
+
+   .cards-container {
+      position: relative;
+      top: 0;
+      left: 0;
+      // pointer-events: none;
+   }
+
+   .transaction-card {
+      background-color: transparent !important;
+      border: none !important;
+   }
+
+   .transaction-body-card {
+      background-color: #202020;
+      border-radius: 20px;
+   }
 }

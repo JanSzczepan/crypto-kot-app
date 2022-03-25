@@ -13,9 +13,9 @@ const App = () => {
         </div>
       </div>
       <div className="app__right col-12 col-lg-5 col-xxl-6">
-        <Transactions />
-        {/* <Footer />
-        <Loader /> */}
+        <div className="app__right-wrapper">
+          <Transactions />
+        </div>
       </div>
     </div>
   )

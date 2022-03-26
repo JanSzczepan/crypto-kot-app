@@ -24,7 +24,7 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
 
 const SendCrypto = () => {
 
-   const { formData, handleChange, sendTransaction, currentAccounts } = useContext(TransactionContext);
+   const { formData, handleChange, sendTransaction, currentAccounts, isLoading } = useContext(TransactionContext);
 
    const handleSubmit = (e) => {
       const { addressTo, amount, keyword, message } = formData;
@@ -92,7 +92,7 @@ const SendCrypto = () => {
                type="text"
                handleChange={handleChange}
             />
-            {false ? (
+            {isLoading ? (
                <Loader />
             ) : (
                <button

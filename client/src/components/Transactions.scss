@@ -174,7 +174,40 @@
    }
 
    .transaction-body-card {
+      min-width: 200px;
       background-color: #202020;
       border-radius: 20px;
+
+      @media(min-width: 320px) {
+         min-width: 250px;
+      }
+      @media(min-width: 576px) {
+         min-width: 300px;
+      }
+   }
+
+   .card-img {
+      aspect-ratio: 4/3;
+      object-position: center;
+      object-fit: cover;
+      pointer-events: none;
+   }
+
+   .time-container {
+      position: relative;
+      width: fit-content;
+      background-color: #080808;
+      border-radius: 15px;
+      z-index: 10;
+   }
+
+   .time-text {
+      font-size: 12px;
+      @media(min-width: 320px) {
+         font-size: 14px;
+      }
+      @media(min-width: 576px) {
+         font-size: 16px;
+      }
    }
 }

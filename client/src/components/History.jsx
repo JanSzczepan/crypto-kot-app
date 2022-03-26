@@ -4,19 +4,45 @@ import { TransactionContext } from '../context/TransactionContext'
 
 import './Transactions.scss'
 
-import dummyData from '../utils/dummyData'
 import { shortenAddress } from '../utils/shortenAddress'
+import dummyData from '../utils/dummyData'
+import useFetch from '../hooks/useFetch'
 
 import { motion } from 'framer-motion'
 
-const TransactionCard = ({ addressTo, addressFrom, timestamp, amount, message, url }) => {
+const TransactionCard = ({ addressTo, addressFrom, timestamp, keyword, amount, message, url, index }) => {
+
+   const gifUrl = useFetch({ keyword })
+
    return (
       <div className="col">
          <div className="transaction-card card h-100">
-            {/* <img src="..." class="card-img-top" alt="..."> */}
             <div className="transaction-body-card card-body">
-               <h5 className="card-title">Card title</h5>
-               <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+               <h5 className="card-title mb-3 mt-2">Transaction {index + 1}</h5>
+               <a className="text-decoration-none" href={`https://ropsten.etherscan.io/address/${addressFrom}`} target="_blank" rel="noopener noreferrer">
+                  <p className="text-light m-0">
+                     From: {shortenAddress(addressFrom)}
+                  </p>
+               </a>
+               <a className="text-decoration-none" href={`https://ropsten.etherscan.io/address/${addressTo}`} target="_blank" rel="noopener noreferrer">
+                  <p className="text-light m-0">
+                     To: {shortenAddress(addressTo)}
+                  </p>
+               </a>
+               <p className="m-0">
+                  Amount: {amount} ETH
+               </p>
+               {message && (
+                  <p className="m-0">
+                     Message: {message}
+                  </p>
+               )}
+               <img src={gifUrl || url} className="card-img img-fluid mt-3" alt="gif" />
+               <div className="time-container mt-n3 mx-auto py-1 px-3 text-center">
+                  <p className="time-text m-0">
+                     {timestamp}
+                  </p>
+               </div>
             </div>
          </div>
       </div>
@@ -31,46 +57,6 @@ const History = (props) => {
    const container = useRef()
    const containerInner = useRef()
 
-   // const [isPressedDown, setIsPressedDown] = useState(false)
-   // const [cursorXSpace, setCursorXSpace] = useState(0)
-   // const [cardsLeft, setCardsLeft] = useState(0)
-
-   // const container = useRef(null)
-   // const cards = useRef(null)
-
-   //////////////////////////
-   // const boundCards = () => {
-   //    const container_rect = container.current.getBoundingClientRect()
-   //    const cards_rect = cards.current.getBoundingClientRect()
-   //    if (parseInt(cardsLeft) > 0) {
-   //      setCardsLeft(0)
-   //    } else if (cards_rect.right < container_rect.right) {
-   //      setCardsLeft(-(cards_rect.width - container_rect.width))
-   //    }
-   // }
-
-   // const handleMouseDown = (e) => {
-   //    setIsPressedDown(true)
-   //    setCursorXSpace(e.nativeEvent.offsetX - cards.current.offsetLeft - 12)
-   //    // container.current.style.cursor = "grabbing"
-   // }
-
-   // const handleMouseMove = (e) => {
-   //    if(!isPressedDown) return
-   //    e.preventDefault()
-   //    setCardsLeft(e.nativeEvent.offsetX - cursorXSpace)
-   //    // boundCards()
-   // }
-
-   // const handleMouseUp = () => {
-   //    // container.current.style.cursor = "grab"
-   // }
-
-   // useEffect(() => {
-   //    window.addEventListener("mouseup", () => {
-   //       setIsPressedDown(false)
-   //    })
-   // }, []);
    const setContainer = () => {
       setWidth(container.current.scrollWidth - container.current.offsetWidth)
    }
@@ -94,7 +80,7 @@ const History = (props) => {
          <motion.div className="cards-container-container" ref={container} whileTap={{ cursor: "grabbing" }}>
             <motion.div className="cards-container row flex-nowrap g-4 text-light" ref={containerInner} drag="x" dragConstraints={{ right: 0, left: -width }}>
                {dummyData.reverse().map((transaction, index) => (
-                  <TransactionCard key={index} {...transaction}/>
+                  <TransactionCard key={index} {...transaction} index={index}/>
                ))}
             </motion.div>
          </motion.div>

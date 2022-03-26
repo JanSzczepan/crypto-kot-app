@@ -13,7 +13,7 @@ contract Transactions {
       uint amount;
       string message;
       uint256 timestamp;
-      string keywor;
+      string keyword;
    }
 
    // array which contains TransferStruct objects

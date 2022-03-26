@@ -39,7 +39,7 @@ export const TransactionProvider = ({children}) => {
             addressFrom: transaction.sender,
             timestamp: new Date(transaction.timestamp.toNumber() * 1000).toLocaleString(),
             message: transaction.message,
-            keyword: transaction.keyword,
+            keyword: transaction.keywor,
             amount: parseInt(transaction.amount._hex) / (10 ** 18)
          }));
          console.log(structuredAvailableTransactions);

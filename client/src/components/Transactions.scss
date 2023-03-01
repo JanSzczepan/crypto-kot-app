@@ -1,17 +1,21 @@
 .transaction-form {
    max-width: 400px;
-   background: rgb(33,33,33);
-   background: linear-gradient(130deg, rgba(33,33,33,1) 0%, rgba(19,19,20,1) 100%);
+   background: rgb(33, 33, 33);
+   background: linear-gradient(
+      130deg,
+      rgba(33, 33, 33, 1) 0%,
+      rgba(19, 19, 20, 1) 100%
+   );
    border-radius: 20px;
 
-   @media(min-width: 700px) {
+   @media (min-width: 700px) {
       max-width: none;
       display: flex;
       justify-content: space-evenly;
       gap: 0 15px;
    }
 
-   @media(min-width: 992px) {
+   @media (min-width: 992px) {
       max-width: 400px;
       flex-direction: column;
       gap: 0;
@@ -26,19 +30,19 @@
    /* Chrome, Safari, Edge, Opera */
    input::-webkit-outer-spin-button,
    input::-webkit-inner-spin-button {
-   -webkit-appearance: none;
-   margin: 0;
+      -webkit-appearance: none;
+      margin: 0;
    }
 
    /* Firefox */
-   input[type=number] {
-   -moz-appearance: textfield;
+   input[type='number'] {
+      -moz-appearance: textfield;
    }
 
-   @media(min-width: 700px) {
+   @media (min-width: 700px) {
       width: 40%;
    }
-   @media(min-width: 992px) {
+   @media (min-width: 992px) {
       width: 100%;
    }
 }
@@ -59,22 +63,26 @@
 
    // background-color: #c599ff;
    background-color: #ab32c0;
-   background-image:#c599ff;background-image:  
-   radial-gradient(at 24% 75%, hsla(283,95%,74%,1) 0, transparent 47%),  
-   radial-gradient(at 97% 34%, hsla(228,71%,61%,1) 0, transparent 50%),  
-   radial-gradient(at 12% 35%, hsla(174,73%,78%,1) 0, transparent 40%);
+   background-image: #c599ff;
+   background-image: radial-gradient(
+         at 24% 75%,
+         hsla(283, 95%, 74%, 1) 0,
+         transparent 47%
+      ),
+      radial-gradient(at 97% 34%, hsla(228, 71%, 61%, 1) 0, transparent 50%),
+      radial-gradient(at 12% 35%, hsla(174, 73%, 78%, 1) 0, transparent 40%);
 
    aspect-ratio: 5/3;
    border-radius: 25px;
    max-width: 352px;
 
-   @media(min-width: 700px) {
+   @media (min-width: 700px) {
       aspect-ratio: unset;
       height: 256px;
       margin-bottom: 0;
    }
 
-   @media(min-width: 992px) {
+   @media (min-width: 992px) {
       height: unset;
       aspect-ratio: 5/3 !important;
       margin-bottom: 2.5rem;
@@ -85,19 +93,19 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   border: 2px solid #F9FAFB;
+   border: 2px solid #f9fafb;
    width: 35px;
    height: 35px;
    border-radius: 50%;
 
-   @media(min-width: 400px) {
+   @media (min-width: 400px) {
       width: 40px;
       height: 40px;
    }
 
    .eth-icon {
       font-size: 20px;
-      @media(min-width: 400px) {
+      @media (min-width: 400px) {
          font-size: 23px;
       }
    }
@@ -107,7 +115,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   border: 1px solid #F9FAFB;
+   border: 1px solid #f9fafb;
    width: 20px;
    height: 20px;
    border-radius: 50%;
@@ -121,7 +129,7 @@
    .address-text {
       font-size: 14px;
 
-      @media(min-width: 350px) {
+      @media (min-width: 350px) {
          font-size: 16px;
       }
    }
@@ -129,18 +137,17 @@
    .eth-title {
       font-size: 20px;
 
-      @media(min-width: 350px) {
+      @media (min-width: 350px) {
          font-size: 23px;
       }
    }
 }
 
 .transaction-btn:focus {
-   box-shadow: 0 0 10px #F9FAFB !important;
+   box-shadow: 0 0 10px #f9fafb !important;
 }
 
 .history {
-
    .history-title {
       position: relative;
       margin-left: 15px;
@@ -151,7 +158,7 @@
       height: 100%;
       position: absolute;
       left: -15px;
-      background-color: #AA32C0;
+      background-color: #aa32c0;
       border-radius: 5px;
    }
 
@@ -179,10 +186,10 @@
       background-color: #202020;
       border-radius: 20px;
 
-      @media(min-width: 320px) {
+      @media (min-width: 320px) {
          min-width: 250px;
       }
-      @media(min-width: 576px) {
+      @media (min-width: 576px) {
          min-width: 300px;
       }
    }
@@ -205,10 +212,10 @@
 
    .time-text {
       font-size: 12px;
-      @media(min-width: 320px) {
+      @media (min-width: 320px) {
          font-size: 14px;
       }
-      @media(min-width: 576px) {
+      @media (min-width: 576px) {
          font-size: 16px;
       }
    }

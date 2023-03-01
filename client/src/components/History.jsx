@@ -33,7 +33,7 @@ const TransactionCard = ({
                <div className='card-text-container pe-2'>
                   <a
                      className='text-decoration-none'
-                     href={`https://ropsten.etherscan.io/address/${addressFrom}`}
+                     href={`https://goerli.etherscan.io/address/${addressFrom}`}
                      target='_blank'
                      rel='noopener noreferrer'
                   >
@@ -43,7 +43,7 @@ const TransactionCard = ({
                   </a>
                   <a
                      className='text-decoration-none'
-                     href={`https://ropsten.etherscan.io/address/${addressTo}`}
+                     href={`https://goerli.etherscan.io/address/${addressTo}`}
                      target='_blank'
                      rel='noopener noreferrer'
                   >

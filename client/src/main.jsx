@@ -9,10 +9,10 @@ import './main.scss'
 import 'bootstrap/dist/js/bootstrap'
 
 ReactDOM.render(
-   <TransactionProvider>
-      <React.StrictMode>
+   <React.StrictMode>
+      <TransactionProvider>
          <App />
-      </React.StrictMode>
-   </TransactionProvider>,
+      </TransactionProvider>
+   </React.StrictMode>,
    document.getElementById('root')
 )
